@@ -1,0 +1,26 @@
+{
+  "name": "znanie-sila-arena",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:https": "concurrently -k -n server,client -c cyan,magenta \"npm run dev -w server\" \"npm run dev:https -w client\"",
+    "build": "npm run build -w client && npm run build -w server",
+    "start": "npm run start -w server",
+    "start:https": "npm run start:https -w server",
+    "typecheck": "npm run typecheck -w shared && npm run typecheck -w server && npm run typecheck -w client",
+    "test": "npm run test -w server",
+    "e2e": "node e2e/run.mjs",
+    "music:preview": "node e2e/render-music.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "puppeteer-core": "^23.10.0"
+  }
+}

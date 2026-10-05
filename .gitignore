@@ -1,0 +1,8 @@
+node_modules/
+dist/
+e2e/screenshots/
+*.log
+.env
+.DS_Store
+e2e/music-preview/
+data/
