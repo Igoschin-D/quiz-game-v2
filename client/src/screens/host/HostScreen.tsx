@@ -205,7 +205,7 @@ export function HostScreen() {
               📝 Вопросы
             </button>
           )}
-          {phase === 'LOBBY' && testPlayers > 0 && (
+          {phase === 'LOBBY' && (
             <button className="btn ghost" onClick={() => act((cb) => socket.emit('host:addBots', { count: 3 }, cb))}>
               + 3 бота
             </button>
